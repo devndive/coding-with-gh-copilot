@@ -11,12 +11,6 @@ this repository was initially created for a microsoft stu internal event to show
 3. setup
     1. gh codespaces
         1. in this github repository click on code & create codespace on main ![create codespaces on main](./images/on-main.png)
-        2. open terminal
-            1. `cd app`
-            2. `npm install`
-            3. `npm start` 
-            4. click open in browser ![open in browser](./images/open-in-browser.png)
-            5. be happy :)
     2. local 
         1. install the needed extensions for your ide
             1. [vscode](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
@@ -26,22 +20,25 @@ this repository was initially created for a microsoft stu internal event to show
 
 ## tasks
 
-### warm-up: playing around with html, css and javascript
-1. change the background color to a css gradient of your choice
-2. add a button to the page
-3. add a div that displays a number
-4. add an on-click event to the button that increases the number by 1
+### warm-up (use copilot inline): playing around with html, css and javascript
+1. create an API endpoint that returns a menu with at least 5 items
+2. create an endpoint to create an order. The API should return the total price
+3. create a Dockerfile
 
 > tip: if you do not know how to do something, just ask github copilot chat for help :) 
 
-### main tasks: deployment
+### main tasks (use github copilot chat): deployment
 1. open the az-deploy.sh and create an azure deployment for your app with azure cli
-    1. use environment variables for the resource group name, app service plan name, app service name and location
-    1. create azure app service
-    2. create a linux app service plan
-    3. use node 18
-    4. deploy your app
-2. tbd ...
+    1. create a resource group
+    1. create an azure container registry
+    1. get the ID for the container registry and store it in a variable
+    1. build a container image with the container registry
+    1. create a managed identity
+    1. get the id of the managed identity and store it in a variable
+    1. get the clientId of the managed identity and store it in a variable
+    1. create a role assignment, the assignee is the client id of the managed identity, the role is `AcrPull` and the scope is the id of the container registry
+    1. create a container apps environment
+    1. create a container app with the registry-identity (id from the managed identity), the registry-server (your-registry-name.azurecr.io), the image (your-registry-name.azurecr.io/your-image-name:latest) and the port (80)
 
 ### bonus tasks: testing, tbd...
 1. ask github copilot to write you a few tests for your on-click event 

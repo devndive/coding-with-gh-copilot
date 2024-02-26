@@ -1,32 +1,37 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/dotnet
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-	"name": " Coding with GitHub Copilot Container",
-    "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:18",
+	"name": "Coding with GitHub Copilot",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/python:1-3.10-bullseye",
 
 	// Configure tool-specific properties.
 	"customizations": {
-		// Configure properties specific to VS Code.
-		"vscode": {	
-			// Add the IDs of extensions you want installed when the container is created.
-			"extensions": [      
-                "esbenp.prettier-vscode",
+		"vscode":{
+			"extensions": [
+				"ms-python.python",
+				"ms-python.debugpy",
 				"GitHub.copilot"
 			]
 		}
 	},
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [5000, 5001],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": "npm install",
-
-	// Additional devcontainer feature configurations
 	"features": {
 		"ghcr.io/devcontainers/features/azure-cli:1": {
 			"version": "latest"
 		}
 	}
 
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "pip3 install --user -r requirements.txt",
+
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 }
