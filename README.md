@@ -20,7 +20,7 @@ Play around with GH Copilot and learn it's capabilities.
 
 ## tasks
 
-### warm-up (use copilot inline): playing around with html, css and javascript
+### warm-up (use copilot inline): building an API with Python and Flask
 1. create an API endpoint that returns a menu with at least 5 items
 
 2. create an endpoint to create an order. The API should return the total price
