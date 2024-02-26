@@ -1,7 +1,7 @@
 # welcome to coding with github copilot ✨
 
 ## what is this repository?
-this repository was initially created for a microsoft stu internal event to show our colleagues how easy it is to code with gh copilot, how it feels to develop with an autocomplete on steriods and teach them how to inspire customers to use gh copilot.
+Play around with GH Copilot and learn it's capabilities.
 
 ## pre-requisites
 1. create a [github account](https://github.com/signup)  
@@ -22,8 +22,24 @@ this repository was initially created for a microsoft stu internal event to show
 
 ### warm-up (use copilot inline): playing around with html, css and javascript
 1. create an API endpoint that returns a menu with at least 5 items
+
 2. create an endpoint to create an order. The API should return the total price
-3. create a Dockerfile
+
+3. copy the following code
+```python
+@app.route('/menu/<string:id>')
+def participants(item_id): 
+    connect = sqlite3.connect('database.db') 
+    cursor = connect.cursor() 
+    cursor.execute('SELECT * FROM menu WHERE id =' + item_id + ';')
+  
+    data = cursor.fetchall()
+
+    return jsonify({'status': data}) 
+``` 
+to your code, select it and ask copilot chat if there are any issues with it.
+
+4. create a Dockerfile
 
 > tip: if you do not know how to do something, just ask github copilot chat for help :) 
 
@@ -41,4 +57,15 @@ this repository was initially created for a microsoft stu internal event to show
     1. create a container app with the registry-identity (id from the managed identity), the registry-server (your-registry-name.azurecr.io), the image (your-registry-name.azurecr.io/your-image-name:latest) and the port (80)
 
 ### bonus tasks: testing, tbd...
-1. ask github copilot to write you a few tests for your on-click event 
+1. ask github copilot to write a (or a few) tests for your api
+
+# Additional reading
+
+## Official resources
+- (Copilot trust center)[https://resources.github.com/copilot-trust-center/]
+- (Copilot Hackathon)[https://github.com/microsoft/CopilotHackathon]
+
+## Other resources
+- (GitHub Copilot Patterns & Exercises)[https://patterns.hattori.dev/]
+- (Build an e-commerce website using GitHub Copilot Chat)[https://github.com/mosabami/createwithcopilot/blob/main/README.md]
+- (Using GitHub Copilot to quickly build a Node.js application with Azure Cosmos DB and App Service)[https://moaw.dev/workshop/?src=gh%3Aazure-samples%2Fcopilot-nodejs-todo%2Fmain%2Fdocs%2F&step=0]
